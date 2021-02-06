@@ -34,14 +34,21 @@ java -jar build/libs/back-0.0.1-SNAPSHOT.jar
 ```
 
 起動できてるかの確認
+
 Adminer
+
 http://localhost:8081
-ログイン
+
+ログインする時に必要な情報
+
 ユーザ：dev
+
 パスワード：pass
+
 データベース：dev
 
 GraphiQL
+
 http://localhost:8080/graphiql
 
 graphql を実行するためのサンプル
