@@ -1,0 +1,10 @@
+query getAuthorById($id: ID!) {
+  getAuthorById(id: $id) {
+    id
+    name
+    books {
+      id
+      name
+    }
+  }
+}

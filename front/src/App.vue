@@ -1,15 +1,20 @@
 <template>
-  <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
+  <div>
+    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
+    <GraphQL></GraphQL>
+  </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
-import HelloWorld from './components/HelloWorld.vue'
+import { defineComponent } from "vue";
+import HelloWorld from "./components/HelloWorld.vue";
+import GraphQL from "./components/graphql.vue";
 
 export default defineComponent({
-  name: 'App',
+  name: "App",
   components: {
     HelloWorld,
+    GraphQL,
   },
 });
 </script>

@@ -1,0 +1,14 @@
+overwrite: true
+schema: http://localhost:8080/graphql
+documents:
+  - ./graphql/queries/**/*.graphql
+  - ./graphql/mutations/**/*.graphql
+generates:
+  ./graphql/gen/gql-types.ts:
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-vue-apollo
+    config:
+      withCompositionFunctions: false
+      # vueCompositionApiImportFrom: vue
