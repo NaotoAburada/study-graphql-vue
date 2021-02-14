@@ -36,6 +36,8 @@ type Comment {
 type Mutation {
   registAuthor(name: String!): RegistAuthorResponse
   registBook(authorId: ID!, name: String!): RegistBookResponse
+  registBlog(registBlogInput: RegistBlogInput): [Blog]
+  registComment(registCommentInput: RegistCommentInput): [Comment]
 }
 
 type RegistAuthorResponse {
@@ -49,4 +51,17 @@ type RegistBookResponse {
   name: String!
   isRegist: Boolean!
   errorMessage: String
+}
+
+input RegistBlogInput {
+  title: String!
+  overview: String!
+  blogBody: String!
+  temporarilySaved: Boolean
+}
+
+input RegistCommentInput {
+  name: String!
+  comment: String!
+  blogId: ID!
 }

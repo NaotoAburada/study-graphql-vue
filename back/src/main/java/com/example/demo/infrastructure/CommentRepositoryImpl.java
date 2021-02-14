@@ -21,4 +21,18 @@ public class CommentRepositoryImpl implements CommentRepository {
     public List<Comment> getComments(BlogId blogId) {
         return commentFactory.create(commentMapper.getComments(blogId.getValue()));
     }
+
+    @Override
+    public List<Comment> registComment(BlogId blogId,
+                            String name,
+                            String comment) {
+        try {
+            commentMapper.registComment(blogId.getValue(), name, comment);
+        } catch (Exception ex) {
+            // isRegist = false;
+            // errorMessage = ex.getMessage();
+        }
+
+        return commentFactory.create(commentMapper.getComments(blogId.getValue()));
+    }
 }

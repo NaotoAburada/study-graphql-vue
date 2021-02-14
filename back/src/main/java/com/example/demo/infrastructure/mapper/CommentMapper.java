@@ -7,6 +7,7 @@ import org.apache.ibatis.annotations.Param;
 @Mapper
 public interface CommentMapper {
     List<CommentEntity> getComments(@Param("blogId") int blogId);
-
-    // void registBook(@Param("authorId") int authorId, @Param("name") String name);
+    void registComment(@Param("blogId") int blogId,
+        @Param("name") String name,
+        @Param("comment") String comment);
 }

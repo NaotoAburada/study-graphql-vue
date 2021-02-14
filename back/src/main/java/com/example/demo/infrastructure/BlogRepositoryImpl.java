@@ -28,4 +28,19 @@ public class BlogRepositoryImpl implements BlogRepository {
     public List<Blog> getBlogList() {
         return blogFactory.create(blogMapper.getBlogList());
     }
+
+    @Override
+    public List<Blog> registBlog(String title,
+                        String overview, 
+                        String blogBody,
+                        boolean temporarilySaved) {
+        try {
+            blogMapper.registBlog(title, overview, blogBody, temporarilySaved);
+        } catch (Exception ex) {
+            // isRegist = false;
+            // errorMessage = ex.getMessage();
+        }
+
+        return blogFactory.create(blogMapper.getBlogList());
+    }
 }

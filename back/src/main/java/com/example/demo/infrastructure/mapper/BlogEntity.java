@@ -11,5 +11,6 @@ public class BlogEntity {
     private String overview;
     private LocalDate post_date;
     private String blog_body;
+    private boolean temporarily_saved;
     private List<CommentEntity> comments;
 }

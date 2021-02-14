@@ -9,4 +9,8 @@ import org.apache.ibatis.annotations.Param;
 public interface BlogMapper {
     BlogEntity getBlogById(@Param("id") int id);
     List<BlogEntity> getBlogList();
+    void registBlog(@Param("title") String title,
+        @Param("overview") String overview, 
+        @Param("blogBody") String blogBody,
+        @Param("temporarilySaved") boolean temporarilySaved);
 }

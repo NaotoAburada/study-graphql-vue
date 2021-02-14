@@ -1,0 +1,8 @@
+mutation registBlog($registBlogInput: RegistBlogInput) {
+  registBlog(registBlogInput: $registBlogInput) {
+    id
+    title
+    overview
+    postDate
+  }
+}

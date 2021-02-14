@@ -50,16 +50,26 @@ export type Comment = {
 export type Mutation = {
   __typename?: "Mutation";
   registAuthor?: Maybe<RegistAuthorResponse>;
+  registBlog?: Maybe<Array<Maybe<Blog>>>;
   registBook?: Maybe<RegistBookResponse>;
+  registComment?: Maybe<Array<Maybe<Comment>>>;
 };
 
 export type MutationRegistAuthorArgs = {
   name: Scalars["String"];
 };
 
+export type MutationRegistBlogArgs = {
+  registBlogInput?: Maybe<RegistBlogInput>;
+};
+
 export type MutationRegistBookArgs = {
   authorId: Scalars["ID"];
   name: Scalars["String"];
+};
+
+export type MutationRegistCommentArgs = {
+  registCommentInput?: Maybe<RegistCommentInput>;
 };
 
 export type Query = {
@@ -95,11 +105,24 @@ export type RegistAuthorResponse = {
   name: Scalars["String"];
 };
 
+export type RegistBlogInput = {
+  blogBody: Scalars["String"];
+  overview: Scalars["String"];
+  temporarilySaved?: Maybe<Scalars["Boolean"]>;
+  title: Scalars["String"];
+};
+
 export type RegistBookResponse = {
   __typename?: "RegistBookResponse";
   authorId: Scalars["ID"];
   errorMessage?: Maybe<Scalars["String"]>;
   isRegist: Scalars["Boolean"];
+  name: Scalars["String"];
+};
+
+export type RegistCommentInput = {
+  blogId: Scalars["ID"];
+  comment: Scalars["String"];
   name: Scalars["String"];
 };
 
@@ -156,6 +179,40 @@ export type GetBlogListQuery = { __typename?: "Query" } & {
   >;
 };
 
+export type RegestCommentMutationVariables = Exact<{
+  registCommentInput?: Maybe<RegistCommentInput>;
+}>;
+
+export type RegestCommentMutation = { __typename?: "Mutation" } & {
+  registComment?: Maybe<
+    Array<
+      Maybe<
+        { __typename?: "Comment" } & Pick<
+          Comment,
+          "name" | "postDate" | "comment"
+        >
+      >
+    >
+  >;
+};
+
+export type RegistBlogMutationVariables = Exact<{
+  registBlogInput?: Maybe<RegistBlogInput>;
+}>;
+
+export type RegistBlogMutation = { __typename?: "Mutation" } & {
+  registBlog?: Maybe<
+    Array<
+      Maybe<
+        { __typename?: "Blog" } & Pick<
+          Blog,
+          "id" | "title" | "overview" | "postDate"
+        >
+      >
+    >
+  >;
+};
+
 export const GetAuthorByIdDocument = gql`
   query getAuthorById($id: ID!) {
     getAuthorById(id: $id) {
@@ -186,6 +243,25 @@ export const GetBlogByIdDocument = gql`
 export const GetBlogListDocument = gql`
   query getBlogList {
     getBlogList {
+      id
+      title
+      overview
+      postDate
+    }
+  }
+`;
+export const RegestCommentDocument = gql`
+  mutation regestComment($registCommentInput: RegistCommentInput) {
+    registComment(registCommentInput: $registCommentInput) {
+      name
+      postDate
+      comment
+    }
+  }
+`;
+export const RegistBlogDocument = gql`
+  mutation registBlog($registBlogInput: RegistBlogInput) {
+    registBlog(registBlogInput: $registBlogInput) {
       id
       title
       overview

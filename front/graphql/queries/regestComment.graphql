@@ -1,0 +1,7 @@
+mutation regestComment($registCommentInput: RegistCommentInput) {
+  registComment(registCommentInput: $registCommentInput) {
+    name
+    postDate
+    comment
+  }
+}

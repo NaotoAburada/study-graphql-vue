@@ -6,5 +6,7 @@ import com.example.demo.types.Comment;
 
 public interface CommentRepository {
     List<Comment> getComments(BlogId blogId);
-    // RegistBookResponse registBook(AuthorId authorId, Name name);
+    List<Comment> registComment(BlogId blogId,
+        String name,
+        String comment);
 }

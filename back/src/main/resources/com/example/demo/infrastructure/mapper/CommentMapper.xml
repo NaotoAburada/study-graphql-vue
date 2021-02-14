@@ -8,6 +8,11 @@
         from comment
         inner join blog
         on comment.blog_id = blog.id
-        where comment.blog = #{blogId}
+        where comment.blog_id = #{blogId}
     </select>
+
+    <insert id="registComment">
+        INSERT INTO comment (name, comment, blog_id, post_date)
+        VALUES (#{name}, #{comment}, #{blogId}, current_date)
+    </insert>
 </mapper>
