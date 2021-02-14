@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 import com.example.demo.types.Book;
 
 @Component
-@AllArgsConstructor
+// @AllArgsConstructor
 public class BookFactory {
 
     /**
@@ -19,7 +19,10 @@ public class BookFactory {
     public List<Book> create(List<BookEntity> bookEntities) {
         List<Book> books = new ArrayList<>();
         for (BookEntity bookEntity : bookEntities) {
-            Book book = Book.builder().id(bookEntity.getId()).authorId(bookEntity.getAuthorId()).name(bookEntity.getName()).build();
+            Book book = Book.builder().id(bookEntity.getId())
+                .authorId(bookEntity.getAuthorId())
+                .name(bookEntity.getName())
+                .build();
             books.add(book);
         }
 

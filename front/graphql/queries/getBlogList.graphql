@@ -1,0 +1,8 @@
+query getBlogList {
+  getBlogList {
+    id
+    title
+    overview
+    postDate
+  }
+}

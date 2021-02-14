@@ -9,6 +9,6 @@ import org.springframework.stereotype.Component;
 public class Query implements GraphQLQueryResolver {
 
     public String version() {
-        return "1.0.0";
+        return "3.0.0";
     }
 }

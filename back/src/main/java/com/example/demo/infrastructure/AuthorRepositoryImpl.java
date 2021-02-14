@@ -11,12 +11,12 @@ import com.example.demo.model.value.Name;
 import com.example.demo.types.Author;
 import com.example.demo.types.RegistAuthorResponse;
 import lombok.AllArgsConstructor;
-// import lombok.extern.slf4j.Slf4j;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
 @Component
 @AllArgsConstructor
-// @Slf4j
+@Slf4j
 public class AuthorRepositoryImpl implements AuthorRepository {
     private final AuthorMapper authorMapper;
     private final AuthorFactory authorFactory;

@@ -1,0 +1,13 @@
+query getBlogById($id: ID!) {
+  getBlogById(id: $id) {
+    id
+    title
+    postDate
+    blogBody
+    comments {
+      name
+      postDate
+      comment
+    }
+  }
+}

@@ -2,6 +2,7 @@ import { createApp, provide, h } from "vue";
 import App from "./App.vue";
 import { ApolloClient, InMemoryCache } from "@apollo/client";
 import { DefaultApolloClient } from "@vue/apollo-composable";
+import "./index.css";
 
 const defaultClient = new ApolloClient({
   uri: "http://localhost:8080/graphql",

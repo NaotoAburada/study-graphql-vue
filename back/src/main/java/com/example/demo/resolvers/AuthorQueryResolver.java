@@ -11,6 +11,8 @@ import com.example.demo.types.Author;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
 
+import com.example.demo.types.Blog;
+
 @Component
 @AllArgsConstructor
 public class AuthorQueryResolver implements GraphQLQueryResolver {
@@ -31,6 +33,4 @@ public class AuthorQueryResolver implements GraphQLQueryResolver {
         Name nameValue = Name.of(name);
         return authorRepositoryImpl.getAuthorByMultiConditions(idValue, nameValue);
     }
-
-    
 }

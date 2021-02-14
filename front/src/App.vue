@@ -2,6 +2,7 @@
   <div>
     <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
     <GraphQL></GraphQL>
+    <ArticleList></ArticleList>
   </div>
 </template>
 
@@ -9,12 +10,14 @@
 import { defineComponent } from "vue";
 import HelloWorld from "./components/HelloWorld.vue";
 import GraphQL from "./components/graphql.vue";
+import ArticleList from "./components/article-list.vue";
 
 export default defineComponent({
   name: "App",
   components: {
     HelloWorld,
     GraphQL,
+    ArticleList,
   },
 });
 </script>

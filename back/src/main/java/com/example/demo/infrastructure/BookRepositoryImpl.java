@@ -39,4 +39,5 @@ public class BookRepositoryImpl implements BookRepository {
 
         return registBookFactory.create(authorId.getValue(), name.getValue(), isRegist, error);
     }
+
 }
